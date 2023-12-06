@@ -26,6 +26,13 @@ class ClientTest(unittest.TestCase):
              'top_bid': {'price': 117.87, 'size': 81}, 'id': '0.109974697771', 'stock': 'DEF'}
         ]
         """ ------------ Add the assertion below ------------ """
+        expected = [
+            ('ABC', 120.48, 119.2, 119.84),
+            ('DEF', 117.87, 121.68, 119.775)
+        ]
+        """ ------------ Add the assertion below ------------ """
+        for i in range(len(quotes)):
+            self.assertEqual(getDataPoint(quotes[i]), expected[i])
 
     """ ------------ Add more unit tests ------------ """
 
